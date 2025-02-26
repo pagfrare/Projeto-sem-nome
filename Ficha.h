@@ -7,5 +7,5 @@
 typedef struct{
   char nome[15], sobrenome[15];
   int idade, cpf;
-}CARTA;
+}ID;
 #endif //FICHA_H
