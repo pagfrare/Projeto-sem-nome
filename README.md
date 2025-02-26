@@ -1,1 +1,1 @@
-UM! é uma versão do clássico jogo de cartas UNO! feito em C, criado como projeto universitário.
+O () é um projeto basíco feito em C, pensado para ser um simples sistema de lisa de convidados para controle de festa
