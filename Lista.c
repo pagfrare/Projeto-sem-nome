@@ -2,7 +2,7 @@
 // Created by pagfr on 25/02/2025.
 //
 #include "Lista.h"
-#include "Carta.h"
+#include "Ficha.h"
 
 int inicia_lista(LISTA *p){
         // Verifica se o ponteiro p não é nulo
