@@ -26,3 +26,15 @@ int aumenta_fila(FILA *p, int n){
   p->fichas = novo;
   return 1;
 }
+int remover_ini (FILA *p){
+  int n = p->fichas[p->primeiro].cpf;
+  p->primeiro++;
+  return n;
+}
+void destruir_fila (FILA *p){
+  free(p->fichas);
+}
+void insere_fila(FILA *p, int n){
+  p->fichas[p->ultimo].cpf = n;
+  p->ultimo++;
+}
