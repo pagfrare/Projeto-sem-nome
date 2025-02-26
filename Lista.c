@@ -19,7 +19,7 @@ int inicia_lista(LISTA *p){
   p->sentinela->anterior = p->sentinela;
   return 1; //Retorna 1 caso tudo tenha dado certo
 }
-int insere_carta(LISTA *p, CARTA c){ //A carta é sempre inserida no final da mao (lista)
+int remove_convidado(LISTA *p, CARTA c){ //A carta é sempre inserida no final da mao (lista)
   PONTEIRO novo = (PONTEIRO)malloc(sizeof(ITEM));
   if (novo == NULL) {
     printf("Erro\n");
@@ -30,7 +30,7 @@ int insere_carta(LISTA *p, CARTA c){ //A carta é sempre inserida no final da ma
   p->sentinela->anterior = novo;
  return 1; //caso de sucesso
 }
-int remove_carta(LISTA *p, CARTA c){
+int remove_convidado(LISTA *p, CARTA c){
 
 
 
