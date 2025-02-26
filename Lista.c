@@ -2,7 +2,7 @@
 // Created by pagfr on 25/02/2025.
 //
 #include "Lista.h"
-#include "Ficha.h"
+#include "Carta.h"
 
 int inicia_lista(LISTA *p){
         // Verifica se o ponteiro p não é nulo
@@ -19,7 +19,7 @@ int inicia_lista(LISTA *p){
   p->sentinela->anterior = p->sentinela;
   return 1; //Retorna 1 caso tudo tenha dado certo
 }
-int remove_convidado(LISTA *p, ID c){ //A carta é sempre inserida no final da mao (lista)
+int remove_convidado(LISTA *p, CARTA c){ //A carta é sempre inserida no final da mao (lista)
   PONTEIRO novo = (PONTEIRO)malloc(sizeof(ITEM));
   if (novo == NULL) {
     printf("Erro\n");
@@ -30,7 +30,7 @@ int remove_convidado(LISTA *p, ID c){ //A carta é sempre inserida no final da m
   p->sentinela->anterior = novo;
  return 1; //caso de sucesso
 }
-int remove_convidado(LISTA *p, ID c){
+int remove_convidado(LISTA *p, CARTA c){
 
 
 

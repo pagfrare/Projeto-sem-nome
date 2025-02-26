@@ -11,7 +11,8 @@
 #include <malloc.h>
 
 typedef struct node {
-    int n;
+  	char nome [15];
+    int cpf;
     struct node *proximo, *anterior;
 } ITEM;
 typedef ITEM *PONTEIRO;
