@@ -12,7 +12,7 @@
 
 typedef struct node {
   	char nome [15];
-    int cpf;
+    char cpf[11];
     struct node *proximo, *anterior;
 } ITEM;
 typedef ITEM *PONTEIRO;
