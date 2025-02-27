@@ -4,6 +4,7 @@
 #include "Fila.h"
 
 int inicia_fila(FILA *p){
+  p = (FILA *)malloc(sizeof(FILA));
   p->tamanho =  4;
   p->fichas = (FICHA *)malloc(p->tamanho * sizeof(FICHA));
   if (p->fichas == NULL){
@@ -17,6 +18,10 @@ int inicia_fila(FILA *p){
 int aumenta_fila(FILA *p, int n){
   p->tamanho = n;
   FICHA *novo = (FICHA *)malloc(p->tamanho * sizeof(FICHA));
+  if (novo == NULL) {
+    printf("Erro ao alocar memoria");
+    return 0;
+  }
   int i, j;
   for (i = 0, j = p->primeiro; i < p->ultimo; i++, j++){
     novo[i] = p->fichas[j];

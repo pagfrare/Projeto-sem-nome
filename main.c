@@ -7,8 +7,8 @@
 #include "Fila.h"
 
 int main(){
-  LISTA *lista = (LISTA *)malloc(sizeof(LISTA));
-  FILA * fila = (FILA *)malloc(sizeof(FILA));
+  LISTA *lista_cadastros;
+  FILA  *fila_cadastro,*fila_sem;
 
 
 

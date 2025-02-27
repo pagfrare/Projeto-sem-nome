@@ -5,7 +5,7 @@
 #include "Carta.h"
 
 int inicia_lista(LISTA *p){
-        // Verifica se o ponteiro p não é nulo
+  p = (LISTA *)malloc(sizeof(LISTA));// Verifica se o ponteiro p não é nulo
   if (p == NULL) {
     printf("Erro\n");
     return 0;
