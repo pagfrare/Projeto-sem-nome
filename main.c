@@ -1,6 +1,9 @@
-//
-// Created by pagfr on 26/02/2025.
-//
+/**
+ * @file main.c
+ * @brief Programa principal para gerenciamento de filas e listas de cadastro.
+ * @author pagfr
+ * @date 26/02/2025
+ */
 
 #include "Ficha.h"
 #include "Fila.h"
@@ -9,12 +12,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * @brief Função principal do programa.
+ * 
+ * Gerencia filas e listas de cadastro, permitindo adicionar IDs à fila,
+ * chamar pessoas da fila e cadastrar novos IDs na lista.
+ * 
+ * @return int Retorna 0 ao finalizar a execução.
+ */
 int main() {
   ITERADOR iterador;
   LISTA *lista_cadastros = inicia_lista(lista_cadastros);
   FILA *fila_cadastro = inicia_fila(fila_cadastro),
        *fila_sem = inicia_fila(fila_sem);
-  ;
   FICHA fichas;
 
   int op = 0, n = 0;
@@ -27,7 +37,9 @@ int main() {
       continue;
     }
     switch (op) {
-      // Inserir id
+      /**
+       * @brief Caso 1 - Adiciona uma pessoa à fila.
+       */
     case 1:
       printf("Insira o nome e o ID: \n");
       scanf("%s %d", fichas.nome, &fichas.id);
@@ -43,7 +55,9 @@ int main() {
         insere_fila(fila_sem, fichas);
       }
       break;
-      // Libera pessoas da fila
+      /**
+       * @brief Caso 2 - Remove uma pessoa da fila e a exibe.
+       */
     case 2:
       if (n % 3 == 2) {
         if (fila_vazia(fila_sem)) {
@@ -67,11 +81,17 @@ int main() {
       }
       n++;
       break;
+      /**
+       * @brief Caso 3 - Cadastra um novo ID na lista.
+       */
     case 3:
       printf("Digite o ID a ser cadastrado\n");
       scanf(" %d", &fichas.id);
       adiciona_id(lista_cadastros, fichas);
       break;
+      /**
+       * @brief Caso -1 - Finaliza o programa e libera memória.
+       */
     case -1:
       destruir_fila(fila_sem);
       destruir_fila(fila_cadastro);
