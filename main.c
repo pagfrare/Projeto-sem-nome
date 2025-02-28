@@ -7,29 +7,31 @@
 #include <ctype.h>
 #include "Lista.h"
 #include "Fila.h"
+#include "Ficha.h"
 
 int main(){
-  ITERADOR *iterador;
+  ITERADOR iterador;
   LISTA *lista_cadastros;
   FILA  *fila_cadastro,*fila_sem;
+  FICHA fichas;
 
   inicia_fila(fila_cadastro);
   inicia_fila(fila_sem);
   inicia_lista(lista_cadastros);
 
-  int op = 0, id;
-  ini_iterador(lista_cadastros, iterador);
+  int op = 0;
   while(1){
+    scanf("%d",&op);
     int n = 0;
     switch (op){
     //Inserir id
-    case 1: scanf("%s",id);
-      if(consulta(lista_cadastros, iterador, id)) {
-          insere_fila(fila_cadastro,id);
+    case 1: scanf("%s %d",fichas.nome, fichas.id);
+      if(consulta(lista_cadastros, iterador, fichas)) {
+          insere_fila(fila_cadastro,fichas);
         }
       else
       {
-        insere_fila(fila_sem,id);
+        insere_fila(fila_sem,fichas);
       }
 
     //Libera pessoas da fila
