@@ -55,7 +55,7 @@ int main(){
     }
     else
     {
-      nsere_fila(fila_sem,cpf);
+      insere_fila(fila_sem,cpf);
     }
 
   } else {
