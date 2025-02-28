@@ -47,19 +47,28 @@ int main(){
   inicia_lista(lista_cadastros);
 
   char cpf[11];
-  scanf("%s",cpf);
+  int op = 0;
+  while(1){
+    switch (op){
+    //Inserir CPF
+    case 1: scanf("%s",cpf);
+      if(validarCPF(cpf)) {
+        if(consultarCPF(lista_cadastros)){
+          insere_fila(fila_cadastro,cpf);
+        }
+        else
+        {
+          insere_fila(fila_sem,cpf);
+        }
 
-  if (validarCPF(cpf)) {
-    if (consultarCPF(lista_cadastros)){
-      insere_fila(fila_cadastro,cpf);
-    }
-    else
-    {
-      insere_fila(fila_sem,cpf);
+      } else {
+        printf("CPF invalido.\n");
+      }
+
+    //Entrada de pessoas
+    case 2: 
     }
 
-  } else {
-    printf("CPF invalido.\n");
   }
 
 
