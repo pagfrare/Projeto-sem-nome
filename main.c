@@ -42,8 +42,26 @@ int main(){
   LISTA *lista_cadastros;
   FILA  *fila_cadastro,*fila_sem;
 
+  inicia_fila(fila_cadastro);
+  inicia_fila(fila_sem);
+  inicia_lista(lista_cadastros);
+
   char cpf[11];
   scanf("%s",cpf);
+
+  if (validarCPF(cpf)) {
+    if (consultarCPF(lista_cadastros)){
+      insere_fila(fila_cadastro,cpf);
+    }
+    else
+    {
+      nsere_fila(fila_sem,cpf);
+    }
+
+  } else {
+    printf("CPF invalido.\n");
+  }
+
 
 
 
