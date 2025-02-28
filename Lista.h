@@ -26,8 +26,8 @@ typedef struct {
   LISTA estrutura;
 }ITERADOR;
 int inicia_lista(LISTA *p);
-int adiciona_cpf(LISTA *p, CARTA c);
-int consulta(LISTA *p, ITERADOR it, FICHAS f);
+int adiciona_cpf(LISTA *p, FICHA c);
+int consulta(LISTA *p, ITERADOR it, FICHA f);
 void ini_iterador(LISTA *p, ITERADOR i);
 int tamanho (LISTA *p);
 #endif //LISTA_H

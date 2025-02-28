@@ -17,4 +17,10 @@ typedef struct {
   int tamanho;
 }FILA;
 
+int inicia_fila(FILA *p);
+int aumenta_fila(FILA *p, int n);
+FICHA remover_ini (FILA *p);
+void destruir_fila (FILA *p);
+void insere_fila(FILA *p, FICHA f);
+
 #endif //FILA_h

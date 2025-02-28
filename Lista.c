@@ -20,7 +20,7 @@ int inicia_lista(LISTA *p){
   p->tamanho = 0;
   return 1; //sucesso
 }
-int adiciona_cpf(LISTA *p, CARTA c){ //A carta é sempre inserida no final da mao (lista)
+int adiciona_id(LISTA *p, FICHA f){ //A carta é sempre inserida no final da mao (lista)
   PONTEIRO novo = (PONTEIRO)malloc(sizeof(ITEM));
   if (novo == NULL) {
     printf("Erro\n");
@@ -28,17 +28,18 @@ int adiciona_cpf(LISTA *p, CARTA c){ //A carta é sempre inserida no final da ma
   }
   novo->proximo = p->sentinela;
   novo->anterior = p->sentinela->anterior;
+  novo->dado = f;
   p->sentinela->anterior = novo;
   p->tamanho++;
  return 1; //caso de sucesso
 }
 int consulta(LISTA *p, ITERADOR it, FICHAS f){
   for (; it != p->sentinela; it->posicao = it->posicao->proximo){
-    if (it->posicao->dado->cpf == f->cpf){
+    if (it->posicao->dado->id == f->id){
       it->posicao->anterior->proximo = it->posicao->proximo;
       it->posicao->proximo = it->posicao->anterior;
       free(it->posicao);
-      return 1; // Caso o cpf seja achado, remove e retorna 1
+      return 1; // Caso o id seja achado, remove e retorna 1
     }
   }
   return 0; // caso não exista
