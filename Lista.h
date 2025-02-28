@@ -31,4 +31,6 @@ int consulta(LISTA *p, FICHA f);
 ITERADOR ini_iterador(LISTA *p);
 int tamanho(LISTA *p);
 int vazia(LISTA *p);
+void destruir_lista(LISTA *p);
+void remove_ini_lista(LISTA *p);
 #endif // LISTA_H

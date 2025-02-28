@@ -29,6 +29,7 @@ int main() {
     switch (op) {
       // Inserir id
     case 1:
+      printf("Insira o nome e o ID: \n");
       scanf("%s %d", fichas.nome, &fichas.id);
       if (consulta(lista_cadastros, fichas)) {
         if (fila_cheia(fila_cadastro)) {
@@ -45,10 +46,21 @@ int main() {
       // Libera pessoas da fila
     case 2:
       if (n % 3 == 2) {
+        if (fila_vazia(fila_sem)) {
+          if (fila_vazia(fila_cadastro)) {
+            printf("Fila vazia\n");
+          } else {
+            printf("%s\n", remover_ini(fila_cadastro).nome);
+          }
+        }
         printf("%s\n", remover_ini(fila_sem).nome);
       } else {
         if (fila_vazia(fila_cadastro)) {
-          printf("%s\n", remover_ini(fila_sem).nome);
+          if (fila_vazia(fila_sem)) {
+            printf("Fila vazia\n");
+          } else {
+            printf("%s\n", remover_ini(fila_sem).nome);
+          }
         } else {
           printf("%s\n", remover_ini(fila_cadastro).nome);
         }
@@ -61,6 +73,9 @@ int main() {
       adiciona_id(lista_cadastros, fichas);
       break;
     case -1:
+      destruir_fila(fila_sem);
+      destruir_fila(fila_cadastro);
+      destruir_lista(lista_cadastros);
       return 0;
       break;
     }

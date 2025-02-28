@@ -58,3 +58,15 @@ int lista_vazia(LISTA *p) {
   }
   return 0;
 }
+void destruir_lista(LISTA *p) {
+  while (p->sentinela->proximo != p->sentinela) {
+    remove_ini_lista(p);
+  }
+  free(p);
+}
+void remove_ini_lista(LISTA *p) {
+  PONTEIRO apagar = p->sentinela->proximo;
+  p->sentinela->proximo = apagar->proximo;
+  apagar->proximo->anterior = p->sentinela;
+  free(apagar);
+}
