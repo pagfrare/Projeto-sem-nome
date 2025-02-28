@@ -5,6 +5,6 @@
 #ifndef FICHA_H
 #define FICHA_H
 typedef struct{
-  char cpf[11];
+  int cpf;
 }FICHA;
 #endif //FICHA_H
